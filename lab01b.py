@@ -137,6 +137,11 @@ print(nparrayCentered.mean(axis=1))
 
 arr1=np.array([[1,2],[3,4],[5,6]])
 arr2=np.array([[1,2,3],[4,5,6]])
-
-print(arr1*arr2)
+print('matrix multiplication')
+print(np.dot(arr1,arr2))
+print('element wise multiplication')
+print(np.multiply(arr1,arr2.T))
+print('mean')
+print(np.mean(arr1))
+print(np.mean(arr2))
 
