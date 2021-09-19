@@ -3,18 +3,18 @@ from nltk.corpus import twitter_samples
 import matplotlib.pyplot as plt
 import random
 
-nltk.download('twitter_samples')
+nltk.download('twitter_samples',R'E:\akshay\SEM7\ML\BSB\Labs\Github\009_AkshayBhanderi')
 
 all_positive=twitter_samples.strings('positive_tweets.json')
 all_negative=twitter_samples.strings('negative_tweets.json')
-"""
+print("-----------------------------------------------------------------")
 print('Number of positive:',len(all_positive))
 print('Number of negative ',len(all_negative))
 
 print('\nthe type of all positive : ',type(all_positive))
 print('the type of a tweet entry is: ',type(all_negative[0]))
-"""
-"""
+
+print("-----------------------------------------------------------------")
 fig=plt.figure(figsize=(5,5))
 
 labels='ML-BSB-Lec','ML-HAP-Lec','ML-HAP-Lab'
@@ -25,8 +25,8 @@ plt.pie(sizes,labels=labels,autopct='%.2f%%',shadow=True,startangle=90)
 
 plt.axis('equal')
 plt.show()
-"""
-"""
+
+print("-----------------------------------------------------------------")
 
 fig=plt.figure(figsize=(8,5))
 
@@ -38,16 +38,17 @@ plt.pie(sizes,labels=labels,autopct='%1.1f%%',shadow=True,startangle=90)
 
 plt.axis('equal')
 plt.show()
-"""
-"""
+
+print("-----------------------------------------------------------------")
 print('\033[92m'+all_positive[random.randint(0,5000)])
 
 print('\033[91m'+all_negative[random.randint(0,5000)])
 
-"""
+
+print("-----------------------------------------------------------------")
 tweet=all_positive[227]
 
-nltk.download('stopwords')
+nltk.download('stopwords',R'E:\akshay\SEM7\ML\BSB\Labs\Github\009_AkshayBhanderi')
 
 
 
@@ -59,6 +60,7 @@ from nltk.tokenize import TweetTokenizer
 
 print('\033[92m'+tweet)
 
+print("-----------------------------------------------------------------")
 tweet2=re.sub(r'https?:\/\/.*[\r\n]','',tweet)
 
 tweet2=re.sub(r'#','',tweet2)
@@ -69,6 +71,7 @@ print()
 print('\033[92m'+tweet2)
 print('\033[94m')
 
+print("-----------------------------------------------------------------")
 tokenizer=TweetTokenizer(preserve_case=False)
 
 tweet_tokens=tokenizer.tokenize(tweet2)
@@ -77,6 +80,7 @@ print()
 print('Tokenized string:')
 print(tweet_tokens)
 
+print("-----------------------------------------------------------------")
 stopwords_english=stopwords.words('english')
 
 print('Stop words\n')
@@ -90,6 +94,7 @@ print('\033[92m')
 print(tweet_tokens)
 print('\033[94m')
 
+print("-----------------------------------------------------------------")
 tweets_clean=[]
 
 for word in tweet_tokens:
@@ -105,6 +110,7 @@ print('\033[92m')
 print(tweets_clean)
 print('\033[94m')
 
+print("-----------------------------------------------------------------")
 stemmer=PorterStemmer()
 
 tweets_stem=[]
